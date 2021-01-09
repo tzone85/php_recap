@@ -11,15 +11,15 @@
             if (str.length == 0) {
                 document.getElementById('output').innerHTML = '';
             } else {
-                // AJAX REQ
+                // AJAX REQUEST
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        docucument.getElementById('output').innerHTML = this.responseText
+                        document.getElementById('output').innerHTML = this.responseText
                     }
-                }
+                };
 
-                xmlhttp.open("GET", "suggestion.php?q="+str, true);
+                xmlhttp.open("GET", "suggest.php?q="+str, true);
                 xmlhttp.send();
             }
         }

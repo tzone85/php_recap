@@ -27,7 +27,7 @@ $people[] = "Mary";
 $people[] = "Brad";
 $people[] = "Mike";
 
-// get query string
+// get query string from index.php
 
 $q = $_REQUEST['q'];
 
@@ -35,12 +35,12 @@ $suggestion = "";
 
 // get suggestionions
 
-if ($q != "") {
+if ($q !== "") {
     $q = strtolower($q);
     $len = strlen($q);
 
     foreach ($people as $person) {
-        if (stristr($q, substr($person, 0 $len))) {
+        if (stristr($q, substr($person, 0, $len))) {
             if ($suggestion === "") {
                 $suggestion = $person;
             }else {
